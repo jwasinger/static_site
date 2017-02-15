@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <style>
+    html, body {
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    div.header {
+      border-bottom: solid 1px;
+      border-color: rgba(0, 0, 0, 0.117647);
+      height: 55px;
+      padding-top: 50px;
+    }
+
+    div.header>div {
+      height: 100%;
+    }
+
+    div.header>div>div {
+      display: inline-block;
+      height: 100%;
+    }
+
+    a {
+      display: block;
+      height: 100%;
+      text-decoration: none;
+      font-family: Roboto, "Helvetica Neue", sans-serif ; 
+      text-align: center ;
+      text-transform: uppercase ;
+      white-space: nowrap ; 
+      color: rgba(0, 0, 0, 0.541176);
+    }
+    
+    a.selected {
+      color: rgb(63, 81, 181);
+      border-bottom: solid 2px rgb(255, 128, 171) ;
+    }
+
+    div.container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: rgb(250, 250, 250);
+    }
+
+    div.content {
+      flex: 1;
+      min-height: 2000px;
+    }
+
+    footer {
+      background-color: green;
+      height: 55px;
+    }
+  </style>
+  <body>
+    <div class='container'>
+      <div class='header'>
+        <div>
+          <div>
+            <a href="/">Home</a>
+          </div>
+          <div>
+            <a class="selected" href="/about">About</a>
+          </div>
+          <div>
+            <a href="/blog">Blog</a>
+          </div>
+        </div>
+      </div>
+      <div class='content'>
+        &nbsp;
+      </div>
+      <footer>
+        &nbsp;
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' type="text/css" href="/static/css/base.css">  
+  </head>
+  <body>
+    <div class='container'>
+      <div class='header'>
+        <div>
+          <div>
+            {% if location == 'index' %}
+            <a class="selected" href="/">Home</a>
+            {% else %}
+            <a href="/">Home</a>
+            {% endif %}
+          </div>
+          <div>
+            {% if location == 'about' %}
+            <a class="selected" href="/about">About</a>
+            {% else %}
+            <a href="/about">About</a>
+            {% endif %}
+          </div>
+          <div>
+            {% if location == 'blog' %}
+            <a class='selected' href="/blog">Blog</a>
+            {% else %}
+            <a href="/blog">Blog</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+      <div class='content'>
+        {% block content %}
+        {% endblock %}
+      </div>
+      <footer>
+        &nbsp;
+      </footer>
+    </div>
+  </body>
+</html>
