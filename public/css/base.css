@@ -1,4 +1,5 @@
 html {
+  height: 110%;
 }
 
 html, body {
@@ -13,6 +14,7 @@ body {
 }
 
 div.header {
+  background-color: rgb(250, 250, 250);
   border-bottom: solid 1px;
   border-color: rgba(0, 0, 0, 0.117647);
   height: 55px;
@@ -48,16 +50,17 @@ div.container {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: rgb(250, 250, 250);
+
 }
 
 div.content {
   flex: 1;
-  min-height: 2000px;
-  width: 100%;
+  padding: 4px 5% 0;
+  background-color: rgb(250, 250, 250);
+  font-size: 20px;
+  line-height: 33px;
 }
 
 footer {
-  background-color: green;
   height: 55px;
 }
