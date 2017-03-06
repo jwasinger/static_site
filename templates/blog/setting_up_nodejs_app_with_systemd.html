@@ -1,0 +1,47 @@
+<!--
+
+Introduction:
+  Thesis: Systemd is a powerful contender for robust software deployments
+
+The example application:
+  Angular SPA Application with NodeJS backend
+  Nginx for reverse proxy and static content serving
+
+Consideration: Automatic restart
+Consideration: Aggregate logs via Journalctl
+
+SystemD configuration
+Nginx configuration
+-->
+{% extends "base.html" %}
+{%  block content %}
+<h2> Deploying a NodeJS web application using SystemD</h2>
+<h3> Introduction </h3>
+<p>
+  Software deployment 
+</p>
+
+<h3>The Example Application</h3>
+<p>
+  The example application being deployed is <a href="https://github.com/jwasinger/material-dashboard">graphical single page dashboard</a> that uses NodeJS/Express.  Nginx, a common web server is used to efficiently serve static files for the application.  In order to help isolate (i.e. restrict permissions) for the NodeJS process, the server needs to bind to a non-restricted port.  However, the application also needs to be available on port 80 so that a user does not need to memorize a port number in addition to the site's host name. 
+  
+  Luckily, Nginx can solve this problem.  By configuring Nginx as a reverse proxy, all HTTP traffic can be forwarded from a non-restricted port (i.e. 1000+*) to port 80 (and vice versa).
+</p>
+
+<h3> Pre-requisites </h3>
+
+<h3> Configuring Nginx </h3>
+<p>
+  The application is running.  However, what happens when it crashes?  Should the administrator need to manually restart the application process every time it goes down?
+</p>
+<p>
+  Better yet: what can be done to gain insight on the cause of any issues that arise?  Having a log history in a terminal buffer is rudimentary and causes a restriction based on the size of the buffer.
+</p>
+<h3> Enter SystemD </h3>
+<p>
+  Both of these issues can be addressed by functionality provided by SystemD.  Automatic restart can be specified in configuration.
+</p>
+<p>
+  Easy access to system logs is provided by Journalctl.  This utility provides the ability todo dynamic queries on the contents of logs for system and user processes.
+</p>
+{% endblock %}

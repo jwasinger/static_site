@@ -1,5 +1,17 @@
 {% extends 'base.html' %}
+{% block head %}
+  <link rel='stylesheet' type="text/css" href="/static/css/blog.css">
+{% endblock %}
 
 {% block content %}
-  Hey, I'm Jared, an aspiring full stack software developer.  I'm from Eugene, OR and currently live in Corvallis, OR where I attend Oregon State University.  My non-tech interests include hiking, weightlifting, meditation and playing the violin.
+  <div class='blog-post'>
+    <h2> <a href="/blog/ci_pipeline">Deploying a NodeJS web application using SystemD</a></h2>
+    <span class='italic'> February 20th, 2017 </span>
+    <p>Technical opinions aside, Systemd has quickly become one of the most common init systems for popular Linux distributions.  By providing a handy set of utilities such as Journald (for logging) and (...), Systemd makes it incredibly easy to deploy and manage software. ...</p>
+  </div>
+  <div class='blog-post'>
+    <h2> <a href="/blog/nodejs_app_on_systemd">Hello Internet!</a></h2>
+    <span class='italic'>February 1st, 2017</span>
+    <p>Hello world! ...</p>
+  </div>
 {% endblock %}
