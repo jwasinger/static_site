@@ -15,8 +15,8 @@ Nginx configuration
 -->
 {% extends "base.html" %}
 {%  block content %}
-<h2> Deploying a NodeJS web application using SystemD</h2>
-<h3> Introduction </h3>
+<h2> Deploy robust NodeJS web applications using Nginx and Systemd</h2>
+<span class='date'> March 6th, 2017 </span>
 <p>
   Software deployment 
 </p>
@@ -28,8 +28,36 @@ Nginx configuration
   Luckily, Nginx can solve this problem.  By configuring Nginx as a reverse proxy, all HTTP traffic can be forwarded from a non-restricted port (i.e. 1000+*) to port 80 (and vice versa).
 </p>
 
-<h3> Pre-requisites </h3>
+<h3> Prerequisites </h3>
+Root access to a machine (or VM) with Centos 7 installed .  I used <a href="/foo/bar">this</a> official image of a minimal release of Centos 7.3 for AWS.
 
+<h3> Setting up the environment </h3>
+<pre>
+yum install -y epel-release 
+yum update -y  
+yum install -y git wget vim screen 
+</pre>
+
+Install NodeJS
+<pre>
+wget http://nodejs.org/dist/latest-v6.x/node-v6.10.0-linux-x64.tar.gz -P /tmp/ &&
+tar --strip-components 1 -xzvf node-v6.10.0-linux-x64.tar.gz -C /usr/ &&
+</pre>
+Install NginX
+
+<pre>
+yum install -y nginx
+/bin/cp /tmp/config/nginx/nginx.conf /etc/nginx/
+</pre>
+
+<pre>
+systemctl start nginx &&
+# Set up the user and directory for the NodeJS application
+mkdir -p /app &&
+useradd -d /app web-app &&
+chown -R web-app:web-app /app &&
+npm install -g bower bower-move &&
+</pre>
 <h3> Configuring Nginx </h3>
 <p>
   The application is running.  However, what happens when it crashes?  Should the administrator need to manually restart the application process every time it goes down?
@@ -44,4 +72,17 @@ Nginx configuration
 <p>
   Easy access to system logs is provided by Journalctl.  This utility provides the ability todo dynamic queries on the contents of logs for system and user processes.
 </p>
+<pre><code>
+server { 
+  listen 80; 
+  server_name web-server;
+
+  location / { 
+    proxy_pass http://localhost:3000;
+  }
+}
+</code></pre>
+
+<h3>Thoughts</h3>
+Expanding this example: Creating an automated deployment pipeline using AWS Codeploy.
 {% endblock %}

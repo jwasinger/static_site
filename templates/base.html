@@ -2,6 +2,7 @@
 <html>
   <head>
     <link rel='stylesheet' type="text/css" href="/static/css/base.css">  
+    <link rel='stylesheet' type="text/css" href="/static/css/blog.css">  
     {% block head %}
     {% endblock %}
   </head>
@@ -9,6 +10,9 @@
     <div class='container'>
       <div class='header'>
         <div>
+          <div class='name'>
+            <a href="/">Jared<span class="strong">Wasinger</span></a>
+          </div>
           <div>
             {% if location == 'index' %}
             <a class="selected" href="/">Home</a>
