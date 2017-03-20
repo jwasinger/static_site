@@ -9,30 +9,18 @@
   <body>
     <div class='container'>
       <div class='header'>
-        <div>
-          <div class='name'>
-            <a href="/">Jared<span class="strong">Wasinger</span></a>
-          </div>
+        <div class='name'>
+          <a href="/"><span class="strong">Jared Wasinger</span></a>
+        </div>
+        <div class='right'>
           <div>
-            {% if location == 'index' %}
-            <a class="selected" href="/">Home</a>
-            {% else %}
             <a href="/">Home</a>
-            {% endif %}
           </div>
           <div>
-            {% if location == 'about' %}
-            <a class="selected" href="/about">About</a>
-            {% else %}
             <a href="/about">About</a>
-            {% endif %}
           </div>
           <div>
-            {% if location == 'blog' %}
-            <a class='selected' href="/blog">Blog</a>
-            {% else %}
             <a href="/blog">Blog</a>
-            {% endif %}
           </div>
         </div>
       </div>
