@@ -1,0 +1,71 @@
+{% extends "blog_template.html" %}
+{%  block blog_content %}
+<h2> Using Tmux to Speed up Productivity in the Linux Shell</h2>
+<p>
+	Tmux (Terminal Multiplexer) is a great open source utility for managing multiple terminal instances.  Similar to screen (link), Tmux supports the creation of persistance terminals that can be detached from without destroying what is running in the shell.
+
+	The one feature that makes tmux definitively supperior to Screen is the introduction of multiple terminal panes on a single window (i.e. terminal multiplexing).
+</p>
+<!-- insert some image of multiplexed terminal here -->
+<h3> Install Tmux (Apt/Yum) </h3>
+<pre>
+	sudo apt-get tmux
+</pre>
+<pre>
+	sudo yum install tmux
+</pre>
+
+
+
+<h3> Configuration </h3>
+<p>
+	Tmux stores its configuration in <pre>file</pre>.  As a Vim user, I like to add the following configuration:
+<pre><code>
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
+</code></pre>
+
+This makes navigating Tmux panes similar to navigating Vim panes (another reason Tmux is an awesome tool!).
+
+</p>
+
+<h3> Usage </h3>
+<p>
+	Simply invoke <pre>tmux</pre> to start a new session.
+</p>
+
+<b>Create a new window:</b>
+Ctrl-b + n
+
+<b>Switch between windows:</b>
+Ctrl-b + n / Ctrl-b + p
+
+<b>Vertically split the current terminal into two panes:</b>
+Ctrl-b + % 
+<b>Horizontally split the current terminal into two panes:</b>
+Ctrl-b + "
+
+<b>Navigate terminal panes:</b>
+Ctrl-b + h / Ctrl-b + j / Ctrl-b + k / Ctrl-b + l
+
+<b>Detach from a session</b>
+Ctrl-b + d
+
+<b>Re-attach to a session</b>
+tmux attach-ses -s \{\{session name\}\}
+
+<b>List active sessions</b>
+tmux list-ses
+
+<b> Force kill a session by name</b>
+tmux kill-ses -s \{\{session name\}\}
+
+<h3>Go forth and conquer</h3>
+<p>
+	I have shown how to install Tmux in addition to the core set of commands that are used to manage sessions, windows and panes.  These are only a small subset of the available configuration options that Tmux ships with.  Check out the man page for more detailed documentation.
+
+	Happy 'muxing!
+</p>
+{% endblock %}
