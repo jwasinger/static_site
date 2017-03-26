@@ -18,8 +18,12 @@ express_app.get('/blog', function(req, res) {
   })
 })
 
+express_app.get('/blog/tmux_tutorial', function(req, res) {
+  return res.render('blog/blog_tmux_tutorial.html')
+})
+
 express_app.get('/blog/tic_tac_toe', function(req, res) {
-  return res.render('blog_tic_tac_toe.html')
+  return res.render('blog/blog_tic_tac_toe.html')
 })
 
 express_app.get('/blog/ci_pipeline', function(req, res) {

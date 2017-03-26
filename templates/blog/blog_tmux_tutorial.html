@@ -1,71 +1,75 @@
-{% extends "blog_template.html" %}
-{%  block blog_content %}
+{% extends "base.html" %}
+{%  block content %}
 <h2> Using Tmux to Speed up Productivity in the Linux Shell</h2>
 <p>
-	Tmux (Terminal Multiplexer) is a great open source utility for managing multiple terminal instances.  Similar to screen (link), Tmux supports the creation of persistance terminals that can be detached from without destroying what is running in the shell.
+Tmux (Terminal Multiplexer) is a great open source utility for managing multiple virtual terminal instances within a single window.  Similar to <a href="https://www.gnu.org/software/screen">GNU Screen</a>, Tmux supports the creation of persistant terminal sessions that can be detached from without destroying what is running in the shell.
 
-	The one feature that makes tmux definitively supperior to Screen is the introduction of multiple terminal panes on a single window (i.e. terminal multiplexing).
+Tmux supports easy splitting of terminal windows into multiple panes, a functionality that is somewhat clunky using Screen.
+
+<div>
+	<img style="max-width: 800px;" src="/static/images/tmux-panes.png"></img>
+</div>
+
 </p>
 <!-- insert some image of multiplexed terminal here -->
 <h3> Install Tmux (Apt/Yum) </h3>
-<pre>
-	sudo apt-get tmux
-</pre>
-<pre>
-	sudo yum install tmux
-</pre>
-
-
+<p>
+Tmux is available from EPEL.  To install simply run <code> sudo apt-get tmux </code> or <code> sudo yum install tmux </code> depending on your OS.
+</p>
 
 <h3> Configuration </h3>
 <p>
-	Tmux stores its configuration in <pre>file</pre>.  As a Vim user, I like to add the following configuration:
-<pre><code>
-bind h select-pane -L
+Tmux stores its configuration in <code>file</code>.  As a Vim user, I like to add the following configuration:
+</p>
+
+<pre><code>bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
-bind l select-pane -R
-</code></pre>
+bind l select-pane -R</code></pre>
 
+<p>
 This makes navigating Tmux panes similar to navigating Vim panes (another reason Tmux is an awesome tool!).
 
 </p>
 
 <h3> Usage </h3>
 <p>
-	Simply invoke <pre>tmux</pre> to start a new session.
+Simply invoke <code>tmux</code> to start a new session.
 </p>
 
-<b>Create a new window:</b>
-Ctrl-b + n
+<h4>Create a new window:</h4>
+<pre>Ctrl-b + n</pre>
 
-<b>Switch between windows:</b>
-Ctrl-b + n / Ctrl-b + p
+<h4>Switch between windows:</h4>
+<code>Ctrl-b + n / Ctrl-b + p</code>
 
-<b>Vertically split the current terminal into two panes:</b>
-Ctrl-b + % 
-<b>Horizontally split the current terminal into two panes:</b>
-Ctrl-b + "
+<h4>Vertically split the current terminal into two panes:</h4>
+<code>Ctrl-b + %</code>
+<h4>Horizontally split the current terminal into two panes:</h4>
+<code>Ctrl-b + "</code>
+<h4>Navigate terminal panes:</h4>
+<code>Ctrl-b + h / Ctrl-b + j / Ctrl-b + k / Ctrl-b + l</code>
 
-<b>Navigate terminal panes:</b>
-Ctrl-b + h / Ctrl-b + j / Ctrl-b + k / Ctrl-b + l
+<h4>Detach from a session</h4>
+<code>Ctrl-b + d</code>
 
-<b>Detach from a session</b>
-Ctrl-b + d
+<h4>Re-attach to a session</h4>
+<code>tmux attach-ses -s <i>session_name</i></code>
 
-<b>Re-attach to a session</b>
-tmux attach-ses -s \{\{session name\}\}
+<h4>List active sessions</h4>
+<code>tmux list-ses</code>
 
-<b>List active sessions</b>
-tmux list-ses
+<h4> Force kill a session by name</h4>
+<code>tmux kill-ses -s <i>session_name</i></code>
 
-<b> Force kill a session by name</b>
-tmux kill-ses -s \{\{session name\}\}
+<h4>Create a named session</h4>
+<code> tmux new-ses -s <i>session_name</i></code>
 
-<h3>Go forth and conquer</h3>
+<h3>Fin</h3>
 <p>
-	I have shown how to install Tmux in addition to the core set of commands that are used to manage sessions, windows and panes.  These are only a small subset of the available configuration options that Tmux ships with.  Check out the man page for more detailed documentation.
-
-	Happy 'muxing!
+These are only a small subset of the available configuration options that Tmux ships with.  Check out the man page for more detailed documentation.
+</p>
+<p>
+Happy 'muxing!
 </p>
 {% endblock %}
