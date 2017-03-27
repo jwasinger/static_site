@@ -6,13 +6,15 @@ Tmux (Terminal Multiplexer) is a great open source utility for managing multiple
 
 Tmux supports easy splitting of terminal windows into multiple panes, a functionality that is somewhat clunky using Screen.
 
-<div>
-	<img style="max-width: 800px;" src="/static/images/tmux-panes.png"></img>
+<div class="expand">
+	<div>
+		<img style="max-width: 800px;" src="/static/images/tmux-panes.png"></img>
+	</div>
 </div>
 
 </p>
 <!-- insert some image of multiplexed terminal here -->
-<h3> Install Tmux (Apt/Yum) </h3>
+<h3> Installion (Apt/Yum) </h3>
 <p>
 Tmux is available from EPEL.  To install simply run <code> sudo apt-get tmux </code> or <code> sudo yum install tmux </code> depending on your OS.
 </p>
@@ -37,34 +39,48 @@ This makes navigating Tmux panes similar to navigating Vim panes (another reason
 Simply invoke <code>tmux</code> to start a new session.
 </p>
 
-<h4>Create a new window:</h4>
-<pre>Ctrl-b + n</pre>
-
-<h4>Switch between windows:</h4>
-<code>Ctrl-b + n / Ctrl-b + p</code>
-
-<h4>Vertically split the current terminal into two panes:</h4>
-<code>Ctrl-b + %</code>
-<h4>Horizontally split the current terminal into two panes:</h4>
-<code>Ctrl-b + "</code>
-<h4>Navigate terminal panes:</h4>
-<code>Ctrl-b + h / Ctrl-b + j / Ctrl-b + k / Ctrl-b + l</code>
-
-<h4>Detach from a session</h4>
-<code>Ctrl-b + d</code>
-
-<h4>Re-attach to a session</h4>
-<code>tmux attach-ses -s <i>session_name</i></code>
-
-<h4>List active sessions</h4>
-<code>tmux list-ses</code>
-
-<h4> Force kill a session by name</h4>
-<code>tmux kill-ses -s <i>session_name</i></code>
-
-<h4>Create a named session</h4>
-<code> tmux new-ses -s <i>session_name</i></code>
-
+<div class='info-table'>
+  <div class='row'>
+  	<div> Create a new window </div>
+	<div> <pre>Ctrl-b + c</pre></div>
+  </div>
+  <div class='row'>
+  	<div> Switch between windows </div>
+	<div> <pre>Ctrl-b + n / Ctrl-b + p</pre></div>
+  </div>
+  <div class='row'>
+  	<div> Split the terminal vertically</div>
+	<div> <pre>Ctrl-b + %</pre></div>
+  </div>
+  <div class='row'>
+  	<div> Split the terminal horizontally</div>
+	<div> <pre>Ctrl-b + "</pre></div>
+  </div>
+  <div class='row'>
+  	<div> Navigate terminal panes </div>
+	<div><pre>Ctrl-b + h / Ctrl-b + j / Ctrl-b + k / Ctrl-b + l </pre></div>
+  </div>
+  <div class='row'>
+  	<div> Detach from a session</div>
+	<div><pre>Ctrl-b + d</pre></div>
+  </div>
+  <div class='row'>
+  	<div> Re-attach to a session</div>
+	<div><pre>tmux attach-ses -s <i>session_name</i></pre></div>
+  </div>
+  <div class='row'>
+  	<div> List active sessions</div>
+	<div><pre>tmux list-ses</pre></div>
+  </div>
+  <div class='row'>
+  	<div> Force kill a session by name</div>
+	<div><pre>tmux kill-ses -s <i>session_name</i></pre></div>
+  </div>
+  <div class='row'>
+  	<div> Create a named session</div>
+	<div><pre>tmux new-ses -s <i>session_name</i></pre></div>
+  </div>
+</div>
 <h3>Fin</h3>
 <p>
 These are only a small subset of the available configuration options that Tmux ships with.  Check out the man page for more detailed documentation.

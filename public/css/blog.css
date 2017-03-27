@@ -10,3 +10,7 @@ span.date {
   font-style: italic;
   margin-left: 0.7em;
 }
+
+div.expand img {
+  margin: 0 auto;
+}
