@@ -106,6 +106,10 @@ div.row:nth-child(even) {
   background-color: #DDDDDD;
 }
 
+code {
+  font-weight: 300;
+}
+
 div.row div {
   display: table-cell;
   vertical-align: top;
@@ -121,4 +125,14 @@ div.row pre {
 footer {
   height: 55px;
   min-height: 55px;
+}
+
+span.caption {
+  padding-top: 0px;
+  margin-top: 0px;
+  font-weight: 300;
+  font-size: 14px;
+  font-style: italic;
+  padding-left: 1em;
+  display: block;
 }

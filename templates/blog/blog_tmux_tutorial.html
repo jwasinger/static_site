@@ -1,18 +1,20 @@
 {% extends "base.html" %}
 {%  block content %}
 <h2> Using Tmux to Speed up Productivity in the Linux Shell</h2>
-<p>
-Tmux (Terminal Multiplexer) is a great open source utility for managing multiple virtual terminal instances within a single window.  Similar to <a href="https://www.gnu.org/software/screen">GNU Screen</a>, Tmux supports the creation of persistant terminal sessions that can be detached from without destroying what is running in the shell.
-
-Tmux supports easy splitting of terminal windows into multiple panes, a functionality that is somewhat clunky using Screen.
 
 <div class="expand">
 	<div>
 		<img style="max-width: 800px;" src="/static/images/tmux-panes.png"></img>
+		<span class='caption'>Terminal multiplexing in action</span>
 	</div>
 </div>
+<p>
+Tmux (Terminal Multiplexer) is a great open source utility for managing multiple virtual terminal instances within a single window.  
+	Similar to <a href="https://www.gnu.org/software/screen">GNU Screen</a>, Tmux supports the creation of persistant terminal sessions that can be detached from without destroying what is running in the shell.
 
+	Tmux supports easy splitting of terminal windows into multiple panes, a functionality that is somewhat clunky using Screen.
 </p>
+
 <!-- insert some image of multiplexed terminal here -->
 <h3> Installion (Apt/Yum) </h3>
 <p>
@@ -21,7 +23,7 @@ Tmux is available from EPEL.  To install simply run <code> sudo apt-get tmux </c
 
 <h3> Configuration </h3>
 <p>
-Tmux stores its configuration in <code>file</code>.  As a Vim user, I like to add the following configuration:
+Tmux looks for user-defined configuration in <code>~/tmux.conf</code>.  As a Vim user, I like to add the following configuration:
 </p>
 
 <pre><code>bind h select-pane -L
@@ -30,8 +32,7 @@ bind k select-pane -U
 bind l select-pane -R</code></pre>
 
 <p>
-This makes navigating Tmux panes similar to navigating Vim panes (another reason Tmux is an awesome tool!).
-
+This makes navigating panes similar to navigating Vim windows.
 </p>
 
 <h3> Usage </h3>
@@ -81,6 +82,10 @@ Simply invoke <code>tmux</code> to start a new session.
 	<div><pre>tmux new-ses -s <i>session_name</i></pre></div>
   </div>
 </div>
+<h3>A Note on scrolling through terminal history</h3>
+<p>
+  In order to enable scrolling through the terminal history of a tmux session, press <code>Ctrl-b + ]</code>
+</p>
 <h3>Fin</h3>
 <p>
 These are only a small subset of the available configuration options that Tmux ships with.  Check out the man page for more detailed documentation.
