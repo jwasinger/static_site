@@ -1,5 +1,21 @@
 {% extends 'base.html' %}
+{% block head %}
+  <link rel='stylesheet' type="text/css" href="/static/css/blog.css">
+{% endblock %}
 
 {% block content %}
-  Hey, I'm Jared, an aspiring full stack software developer.  I'm from Eugene, OR and currently live in Corvallis, OR where I attend Oregon State University.  My non-tech interests include hiking, weightlifting, meditation and playing the violin.
+  <div class='blog-post'>
+    <h2> <a href="/blog/nodejs_app_on_systemd">Deploying NodeJS Applications on Centos7 using Nginx and SystemD</a></h2>
+    <span class='italic'> March 24th, 2017 </span>
+    <p>
+		NodeJS applications
+    </p>
+  </div>
+  <div class='blog-post'>
+    <h2> <a href="/blog/tmux_tutorial">Using Tmux to Speed up Productivity in the Linux Shell</a></h2>
+    <span class='italic'> March 24th, 2017 </span>
+    <p>
+      Tmux is a great open source utility that  can greatly speed up productivity when using the shell.
+    </p>
+  </div>
 {% endblock %}

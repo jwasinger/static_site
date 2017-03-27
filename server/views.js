@@ -1,21 +1,15 @@
 var express = require('express')
 
 express_app.get('/', function(req, res) {
-  return res.render('index.html', {
-    "location": "index" 
-  })
+  return res.render('blog.html')
 })
 
 express_app.get('/about', function(req, res) {
-  return res.render('about.html', {
-    "location": "about" 
-  })
+  return res.render('about.html')
 })
 
 express_app.get('/blog', function(req, res) {
-  return res.render('blog.html', {
-    "location": "blog" 
-  })
+  return res.render('blog.html')
 })
 
 express_app.get('/blog/tmux_tutorial', function(req, res) {

@@ -37,6 +37,7 @@ div.header {
   padding-right: 30px;
   display: flex;
   flex-direction: row;
+  padding-bottom: 20px;
 }
 
 div.header>div.right {
@@ -133,6 +134,6 @@ span.caption {
   font-weight: 300;
   font-size: 14px;
   font-style: italic;
-  padding-left: 1em;
+  padding-left: 0.5em;
   display: block;
 }

@@ -7,6 +7,7 @@ span.date {
   margin-left: 0.7em;
 }
 
-div.expand img {
-  margin: 0 auto;
+div.expand>div>img {
+  max-width: 800px;
+  min-width: 200px;
 }
