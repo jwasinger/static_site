@@ -14,6 +14,25 @@ a, h1, h2, h3, h4{
   font-weight: 500;
 }
 
+h2 {
+  margin: 10px 0 0 0;
+}
+
+div.preview img {
+  float: left;
+  margin: 10px 20px 10px 0;
+  display: inline;
+}
+
+div.content h2 {
+  margin: 10px 0 10px 0;
+}
+
+div.preview p {
+  display: inline;
+  margin: auto auto 1.5em;
+}
+
 html, body {
   height: 100%;
   margin: 0;
@@ -110,9 +129,7 @@ div.row:nth-child(even) {
 code {
   font-weight: 300;
 }
-
-div.row div {
-  display: table-cell;
+div.row div { display: table-cell;
   vertical-align: top;
   border: solid 1px black;
   padding-left: 10px;
