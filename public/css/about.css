@@ -1,10 +1,19 @@
-div.img-container {
-  width: 100%;
+img.profile-pic {
+  padding-right: 1.5em;
+  max-height: 200px;
+  border-radius: 100%;
 }
 
-div.img-container img {
-  margin: 56px auto; 
-  max-height: 320px;
-  border-radius: 100%;
-  display: block;
+div.inline {
+  display: flex;
+  flex-direction: row;
+}
+
+div.inline>* {
+  margin: 56px auto;
+}
+
+div.inline>div {
+  flex: 1;
+
 }

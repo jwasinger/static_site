@@ -11,3 +11,21 @@ div.expand>div>img {
   max-width: 800px;
   min-width: 200px;
 }
+
+div.info-table {
+  display: table;
+  border-collapse: collapse;
+  border-radius: 5px;
+}
+
+div.row {
+  display: table-row;
+}
+
+div.row:nth-child(even) {
+  background-color: #DDDDDD;
+}
+
+code {
+  font-weight: 300;
+}
