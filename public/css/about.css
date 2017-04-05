@@ -9,9 +9,11 @@ div.inline {
   flex-direction: row;
 }
 
+/*
 div.inline>* {
   margin: 56px auto;
 }
+*/
 
 div.inline>div {
   flex: 1;

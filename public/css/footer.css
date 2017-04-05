@@ -4,7 +4,9 @@ footer {
   justify-content: center;
   position: relative;
   min-height: 70px;
-  background-color: rgb(245,245,245);
+  background-color: #EEE;/*rgb(245,245,245);*/
+  height: 55px;
+  min-height: 55px;
 }
 
 .footer-content { 
@@ -45,4 +47,16 @@ footer {
 .twitter-logo img, .twitter-logo a { 
   width: 45px;
   height: 45px;
+}
+
+footer {
+  padding-top: 46px;
+}
+
+footer i.fa {
+  font-size: 30px;
+}
+
+footer a {
+  margin-right: 8px;
 }
