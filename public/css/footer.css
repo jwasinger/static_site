@@ -1,0 +1,48 @@
+footer { 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  min-height: 70px;
+  background-color: rgb(245,245,245);
+}
+
+.footer-content { 
+  display: flex;
+  flex-direction: row;
+}
+
+.footer-content a { 
+  flex: 1;
+  margin: 10px;
+}
+
+.github-logo {
+  width: 45px;
+  height: 45px;
+}
+
+.github-logo img {
+  width: 45px;
+  height: 45px;
+}
+
+.linkedin-logo { 
+  width: 45; 
+  height: 45px;
+}
+
+.linkedin-logo img { 
+  width: 45; 
+  height: 45px;
+}
+
+.twitter-logo {
+  width: 45px;
+  height: 45px;
+}
+
+.twitter-logo img, .twitter-logo a { 
+  width: 45px;
+  height: 45px;
+}
