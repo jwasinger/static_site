@@ -1,5 +1,5 @@
 html {
-  height: 110%;
+  min-height: 100%;
   font-family: Ubuntu, sans-serif; 
   background-color: #EEE;
   text-rendering: optimizeLegibility;
@@ -28,9 +28,11 @@ div.preview img {
   display: inline;
 }
 
+/*
 div.content h2 {
   margin: 10px 0 10px 0;
 }
+*/
 
 div.preview p {
   display: inline;
@@ -53,8 +55,7 @@ div.header {
   border-bottom: solid 1px;
   background-color: rgb(245,245,245);
   border-color: rgba(0, 0, 0, 0.117647);
-  height: 55px;
-  min-height: 55px;
+  min-height: 70px;
   padding-top: 30px;
   padding-left: 30px;
   padding-right: 30px;
@@ -97,6 +98,10 @@ div.name a {
   font-size: 30px;
 }
 
+.header-item {
+  font-size: 20px;
+}
+
 div.header>div>div {
   margin: 0 auto;
 }
@@ -104,6 +109,10 @@ div.header>div>div {
 div.header>div>div>a.selected {
   /*color: rgb(63, 81, 181);*/
   border-bottom: solid 2px rgb(255, 128, 171) ;
+}
+
+h2.title {
+  margin-bottom: 0px;
 }
 
 div.container {
@@ -116,8 +125,8 @@ div.container {
 div.content {
   flex: 1;
   padding-top: 56px;
-  padding-left: 30px;
-  padding-right: 30px;
+  padding-left: 40px;
+  padding-right: 40px;
   background-color: rgb(245,245,245);
   font-size: 16px;
   line-height: 33px;
@@ -145,8 +154,15 @@ span.caption {
   padding-top: 0px;
   margin-top: 0px;
   font-weight: 300;
-  font-size: 14px;
-  font-style: italic;
-  padding-left: 0.5em;
+  font-size: 16px;
+  color: #50505A;
   display: block;
+}
+
+.contact-bar * {
+  color: #50505A;
+}
+
+div.left {
+  display: flex;
 }
