@@ -88,6 +88,10 @@ div.name a {
   font-size: 30px;
 }
 
+div.name .caption {
+  margin-top: 5px;
+}
+
 .strong {
   font-weight: 700;
 }
@@ -159,10 +163,22 @@ span.caption {
   display: block;
 }
 
-.contact-bar * {
+.contact-bar a:hover {
   color: #50505A;
+}
+
+.contact-bar a {
+  color: #e1e1dc;
 }
 
 div.left {
   display: flex;
+}
+
+div.contact-bar a {
+  margin-left: 5px;
+}
+
+div.contact-bar {
+  padding-top: 5px;
 }
