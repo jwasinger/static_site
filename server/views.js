@@ -1,7 +1,7 @@
 var express = require('express')
 
 express_app.get('/', function(req, res) {
-  return res.render('blog.html')
+  return res.render('about.html')
 })
 
 express_app.get('/about', function(req, res) {
