@@ -4,6 +4,10 @@ express_app.get('/', function(req, res) {
   return res.render('about.html')
 })
 
+express_app.get('/selenium_test', function(req, res) {
+  return res.render('selenium_test.html')
+})
+
 express_app.get('/about', function(req, res) {
   return res.render('about.html')
 })
